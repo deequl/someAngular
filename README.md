@@ -23,6 +23,39 @@ Combination of Both
 * ngClass
 * ngFor
 
+### Decorators
+import {..., Input } from '@angular/core';
+@Input() element:{name: string...} -> Bind elements to parent components
+  @Input('aliasname') ...
+
+import {..., Output } from '@angular/core';
+@Output() element:{name: string...} -> Bind elements to child components
+  @Output('aliasname') ...
+
+### Events
+serverCreated = new EventEmitter<{serverName: string}>();
+onAddServer(){
+  this.serverCreated.emit({serverName: 'nameofServer'});
+}
+
+### Encapsulation
+Emulated is by default.
+@Component({
+  ...,
+  encapsulation: ViewEncapsulation.Emulated // None, Native 
+})
+
+### Local references
+<input
+  type="text"
+  class="form-control"
+  #serverNameInput
+>
+onAddServer(serverNameInput){
+  ...
+  serverNameInput -> We get the entire element
+}
+
 ## Getting Started
 Install nodejs in your computer. [Download NodeJS](https://nodejs.org/es/)
 
@@ -75,7 +108,7 @@ imports: [..., HttpModule]
 
 To install Bootstrap v4 use
 ```
-npm install --save bootstrap@
+npm install --save bootstrap@ jquery popper.js
 ```
 and add the following code to 'angular.json' file:
 ```
@@ -83,7 +116,12 @@ and add the following code to 'angular.json' file:
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.sass"
-            ],...
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
 ```
 ## Deployment
 

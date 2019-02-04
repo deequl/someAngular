@@ -32,6 +32,8 @@ import {..., Output } from '@angular/core';
 @Output() element:{name: string...} -> Bind elements to child components
   @Output('aliasname') ...
 
+@ViewChild('selectorNameElement') serverContentInput: ElementRef;
+
 ### Events
 serverCreated = new EventEmitter<{serverName: string}>();
 onAddServer(){
@@ -49,12 +51,26 @@ Emulated is by default.
 <input
   type="text"
   class="form-control"
-  #serverNameInput
->
-onAddServer(serverNameInput){
+  #serverNameInput>
+onAddServer(serverNameInput: HTMLInputElement){
   ...
-  serverNameInput -> We get the entire element
+  serverNameInput.value -> We get the entire element
 }
+
+### Hooks Component Lifecycle
+import {..., OnInit, OnChanges, ...}
+export class ... implements OnInit, OnChanges ...{
+  (use of hooks)
+}
+ngOnChanges: Called after a bound input property changes
+    ngOnChanges(changes: SimpleChanges) { console.lof(changes); }
+ngOnInit: Called once the component is initialized
+ngDoCheck: Called during every change detection run
+ngAfterContentInit: Called after content (ng-content) has been projected into view
+ngAfterContentChecked: Called every time the projected content has been checked
+ngAfterViewInit: Called after the component's view (and child views) has been initialized
+ngAfterViewChecked: Called every time the view (and child views) have been checked
+ngOnDestroy: Called once the component is about to be destroyed
 
 ## Getting Started
 Install nodejs in your computer. [Download NodeJS](https://nodejs.org/es/)

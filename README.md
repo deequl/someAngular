@@ -34,6 +34,8 @@ import {..., Output } from '@angular/core';
 
 @ViewChild('selectorNameElement') serverContentInput: ElementRef;
 
+@ContentChild('contentParagraph') paragraph: ElementRef;
+
 ### Events
 serverCreated = new EventEmitter<{serverName: string}>();
 onAddServer(){
@@ -63,13 +65,20 @@ export class ... implements OnInit, OnChanges ...{
   (use of hooks)
 }
 ngOnChanges: Called after a bound input property changes
-    ngOnChanges(changes: SimpleChanges) { console.lof(changes); }
+  ngOnChanges(changes: SimpleChanges) { console.lof(changes); }
+
 ngOnInit: Called once the component is initialized
+
 ngDoCheck: Called during every change detection run
+
 ngAfterContentInit: Called after content (ng-content) has been projected into view
+
 ngAfterContentChecked: Called every time the projected content has been checked
+
 ngAfterViewInit: Called after the component's view (and child views) has been initialized
+
 ngAfterViewChecked: Called every time the view (and child views) have been checked
+
 ngOnDestroy: Called once the component is about to be destroyed
 
 ## Getting Started

@@ -2,9 +2,10 @@
 
 # dependencies
 /angular7TestApp/node_modules
-/angularTutorial/componets-app/node_modules
-/angularTutorial/first-app/node_modules
-/angularTutorial/course-project/node_modules
+/angularTutorial/app-componets/node_modules
+/angularTutorial/app-first/node_modules
+/angularTutorial/assignment4/node_modules
+/angularTutorial/course-app-recipes/node_modules
 /node_modules
 /.pnp
 .pnp.js

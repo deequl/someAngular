@@ -22,6 +22,7 @@ Combination of Both
 * ngStyle
 * ngClass
 * ngFor
+* ngSwitch
 
 ### Decorators
 import {..., Input } from '@angular/core';
@@ -35,6 +36,12 @@ import {..., Output } from '@angular/core';
 @ViewChild('selectorNameElement') serverContentInput: ElementRef;
 
 @ContentChild('contentParagraph') paragraph: ElementRef;
+
+@HostListener ('DOMevent') mouseover(eventData: Event) {
+  ...
+}
+
+@HostBinding('style.backgroundColor') backgroundColor: string = 'yellow';
 
 ### Events
 serverCreated = new EventEmitter<{serverName: string}>();
@@ -171,6 +178,10 @@ http-serve -o
 (Nº 7, 9, 11, 16, 17, 29, 31, 33, 43, 44, 45, 46, 48) 
 
 * [Angular 7 Tutorial](https://coursetro.com/posts/code/171/Angular-7-Tutorial---Learn-Angular-7-by-Example) - Complete tutorial angular
+
+* [Angular 7 with Bootstrap4](https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b) - How To Build Responsive Layouts
+
+* [Angular Observables](https://medium.com/@luukgruijs/understanding-creating-and-subscribing-to-observables-in-angular-426dbf0b04a3) - Understanding, creating and subscribing to observables in Angular
 
 ## Notes
 The [MDN](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/button) (Mozilla Developer Network) offers nice list of all properties and events of the element you're interested in.

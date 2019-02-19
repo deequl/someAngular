@@ -1,0 +1,34 @@
+export class UserService {
+    activeUsers = ['Max', 'Anna'];
+    inactiveUsers = ['Chris', 'Manu'];
+
+    setToActive(id: number) {
+        this.activeUsers.push(this.inactiveUsers[id]);
+        this.inactiveUsers.splice(id, 1);
+    }
+
+    setToInactive(id: number){
+        this.inactiveUsers.push(this.inactiveUsers[id]);
+        this.inactiveUsers.splice(id, 1);
+    }
+}
+
+//And then inside our component...
+//[app.component.ts]
+import { UserService } from './users.service';
+
+@CompositionEvent({
+    ... ,
+    providers: [UserService]
+})
+
+export class AppComponent {}
+
+//[child-components-of-app.component.ts]
+import { UserService } from '../users.service';
+
+...
+
+export class child-component-app {
+    constructor(private usersService: UserService) {}
+}

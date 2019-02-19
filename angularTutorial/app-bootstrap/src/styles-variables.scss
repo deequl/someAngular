@@ -1,0 +1,8 @@
+//In practice, it can be useful to create styles-variables.scss file next to our styles.scss in the src folder with responsive layout breakpoints (as defined in Bootstrap by default).
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
